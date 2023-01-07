@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, ViewComponent } from 'react-native';
+import { Image, Text, View, ViewComponent } from 'react-native';
 
 const App = () => {
   // 1.) Create New Components(Functional Components)
@@ -14,6 +14,7 @@ const App = () => {
       <Text>Rayyyyy</Text>
       <Clouse />
       <Text>Rayyyyy</Text>
+      <Photos/>
     </View>
   );
 };
@@ -21,5 +22,14 @@ const App = () => {
 const Clouse = () => {
   return <Text>Bilaaa</Text>;
 };
+
+const Photos = () => {
+  return (
+    <Image
+      source={{ uri: 'https://placeimg.com/100/100/animals' }}
+      style={{ width: 100, height: 100 }}
+    />
+  );
+}
 
 export default App;
