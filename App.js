@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Text, View, ViewComponent } from 'react-native';
+import { Image, Text, TextInput, View, ViewComponent } from 'react-native';
 
 const App = () => {
   // 1.) Create New Components(Functional Components)
@@ -15,6 +15,7 @@ const App = () => {
       <Clouse />
       <Text>Rayyyyy</Text>
       <Photos/>
+      <TextInput style={{borderWidth: 1}} />
     </View>
   );
 };
