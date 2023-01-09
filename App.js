@@ -1,8 +1,35 @@
 import React, { Component } from 'react';
-import { Image, Text, TextInput, View } from 'react-native';
+import { Image, StyleSheet, Text, TextInput, View } from 'react-native';
 
 const App = () => {
   // 1.) Create New Components(Functional Components)
+  return (
+    <StylingReactNative/>
+  );
+};
+
+//  3.) Styling Component React
+const StylingReactNative = () => {
+  return (
+    <View>
+    {/* Dengan object stylesheets */}
+      <Text style={styles.text}>Styling Component</Text>
+      <View style={{ width: 100, height: 100, backgroundColor: '#93CAED', borderWidth:2, borderColor:'purple', marginTop:10, marginLeft:10 }}></View>
+    </View>
+  );
+}
+
+
+const styles = StyleSheet.create({
+ text: {
+  fontSize:28,
+  fontWeight:'bold'
+
+ }
+})
+
+
+const SampleComponent = () => {
   return (
     <View>
       {/* View adalah parent apabaila hanya teks makan tidak bisa
@@ -19,8 +46,10 @@ const App = () => {
       <BoxGreen/>
       <Profile/>
     </View>
-  );
-};
+  )
+}
+
+// end 3
 
 const Clouse = () => {
   return <Text>Bilaaa</Text>;
