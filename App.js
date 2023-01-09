@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, Text, TextInput, View, ViewComponent } from 'react-native';
+import { Image, Text, TextInput, View } from 'react-native';
 
 const App = () => {
   // 1.) Create New Components(Functional Components)
@@ -17,6 +17,7 @@ const App = () => {
       <Photos/>
       <TextInput style={{borderWidth: 1}} />
       <BoxGreen/>
+      <Profile/>
     </View>
   );
 };
@@ -39,6 +40,16 @@ const Photos = () => {
 class BoxGreen extends Component {
   render() {
     return <Text>Ini Component dari class</Text>
+  }
+}
+
+
+// 2 of component classs 
+class Profile extends Component{
+  render(){
+    return <Image 
+    source={{ uri: 'https://placeimg.com/100/100/tech' }}
+    style={{ width:100, height:100 }} />;
   }
 }
 
