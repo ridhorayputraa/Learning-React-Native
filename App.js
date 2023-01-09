@@ -47,10 +47,16 @@ class BoxGreen extends Component {
 // 2 of component classs 
 class Profile extends Component{
   render(){
-    return <Image 
-    source={{ uri: 'https://placeimg.com/100/100/tech' }}
-    style={{ width:100, height:100 }} />;
-  }
+    return (
+      <View>
+        <Image
+          source={{ uri: 'https://placeimg.com/100/100/tech' }}
+          style={{ width: 100, height: 100, borderRadius:50 }}
+        />
+        <Text style={{ color:'blue', fontSize:24 }}>Ini adlaah teknologi</Text>
+      </View>
+    );  
+}
 }
 
 
