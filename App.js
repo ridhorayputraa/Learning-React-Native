@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Image, Text, TextInput, View, ViewComponent } from 'react-native';
 
 const App = () => {
@@ -16,6 +16,7 @@ const App = () => {
       <Text>Rayyyyy</Text>
       <Photos/>
       <TextInput style={{borderWidth: 1}} />
+      <BoxGreen/>
     </View>
   );
 };
@@ -32,5 +33,14 @@ const Photos = () => {
     />
   );
 }
+
+
+//  2.) Membuat class components
+class BoxGreen extends Component {
+  render() {
+    return <Text>Ini Component dari class</Text>
+  }
+}
+
 
 export default App;
