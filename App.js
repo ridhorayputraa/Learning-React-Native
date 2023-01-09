@@ -23,8 +23,10 @@ const StylingReactNative = () => {
 const styles = StyleSheet.create({
  text: {
   fontSize:28,
-  fontWeight:'bold'
-
+  fontWeight:'bold',
+  color:'green',
+  marginLeft:10,
+  marginTop:40
  }
 })
 
