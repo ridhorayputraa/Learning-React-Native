@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import { Image, StyleSheet, Text, TextInput, View } from 'react-native';
+import mackbook from './mackbook.jpg'
 
 const App = () => {
   // 1.) Create New Components(Functional Components)
   return (
+    <>
     <StylingReactNative/>
+    <ImageMac/>
+    </>
   );
 };
 
@@ -15,8 +19,25 @@ const StylingReactNative = () => {
     {/* Dengan object stylesheets */}
       <Text style={styles.text}>Styling Component</Text>
       <View style={{ width: 100, height: 100, backgroundColor: '#93CAED', borderWidth:2, borderColor:'purple', marginTop:10, marginLeft:10 }}></View>
+
+{/* CHallnge styling */}
+ <View>
+  <Image source={mackbook}/>
+ </View>
+
+
     </View>
   );
+}
+
+const ImageMac = () => {
+  return (
+    <View>
+      <Image
+      style={{ width:100, height:100 }} 
+       source={mackbook}/>
+    </View>
+  )
 }
 
 
