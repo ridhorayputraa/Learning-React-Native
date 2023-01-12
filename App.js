@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-import { Image, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
-import mackbook from './mackbook.jpg';
+import React from 'react';
+import {  ScrollView } from 'react-native';
 import SampleComponent from './SampleComponent';
 import StylingReactNative from './StylingReactNativeComponent';
 

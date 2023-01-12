@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Image, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import React from 'react';
+import { Image, StyleSheet, Text, View } from 'react-native';
 import mackbook from './mackbook.jpg';
 
 // 3.) Styling Component React
