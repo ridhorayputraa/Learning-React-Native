@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-import { Image, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import mackbook from './mackbook.jpg';
 
 const App = () => {
   // 1.) Create New Components(Functional Components)
   return (
     <>
+    {/* Scroll view => agar bisa men scroll content */}
+    <ScrollView>
+          <SampleComponent/>
           <StylingReactNative /> 
+    </ScrollView>
     </>
   );
 };
