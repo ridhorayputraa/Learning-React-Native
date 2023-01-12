@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, View } from "react-native";
+import { Image, Text, View } from "react-native";
 
 
 class MateriFlexbox extends Component{
@@ -27,8 +27,27 @@ class MateriFlexbox extends Component{
              <Text>Komunitas</Text>
              <Text>Channel</Text>
              <Text>Tentang</Text>
-            </View>
+            </View> 
+
+            <View style={{ flexDirection:'row', alignItems:"center", marginTop:20 }}>
+
+            <Image source={{uri: 'https://yt3.googleusercontent.com/ytc/AMLnZu_57WXxZtMIajonGogjyhCA0pEFVzIYK-ccc791fg=s176-c-k-c0x00ffffff-no-rj', 
+             }} style={{ width:100, height:100, borderRadius:50, marginRight:15 }} />
             
+            <View>
+
+            <Text style={{ fontSize:20, fontWeight:'bold' }}>
+                RIdho Ray
+            </Text>
+            <Text>
+                @RidhoRay
+            </Text>     
+            <Text>
+                2,89 rb subscriber
+            </Text>       
+            </View>
+
+            </View>
 
             </View>
         ); 
