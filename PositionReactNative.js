@@ -7,6 +7,7 @@ export default function PositionReactNative() {
     <View style={styles.wrapper}>
       <View style={styles.cartWrapper}>
         <Image source={chart} style={styles.iconCart} />
+        <Text style={styles.notif}>10</Text>
       </View>
       <Text style={styles.text}>Keranjang Belanja Anda</Text>
     </View>
@@ -39,5 +40,14 @@ const styles = StyleSheet.create({
     color: '#777777',
     fontWeight: '700',
     marginTop: 8,
+  },
+  notif: {
+    fontSize: 12,
+    color: 'white',
+    backgroundColor: '#6fcf97',
+    padding: 4,
+    borderRadius: 25,
+    width: 24,
+    height: 24,
   },
 });
