@@ -1,5 +1,6 @@
 import React from 'react';
 import {  ScrollView } from 'react-native';
+import MateriFlexbox from './MateriFlexbox';
 import SampleComponent from './SampleComponent';
 import StylingReactNative from './StylingReactNativeComponent';
 
@@ -10,8 +11,11 @@ const App = () => {
     <>
     {/* Scroll view => agar bisa men scroll content */}
     <ScrollView>
-          <SampleComponent/>
-          <StylingReactNative /> 
+          {/* <SampleComponent/>
+          <StylingReactNative />  */}
+
+          {/* 5.) MAteri Flexbox */}
+          <MateriFlexbox/>
     </ScrollView>
     </>
   );
