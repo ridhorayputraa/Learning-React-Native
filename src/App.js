@@ -4,7 +4,8 @@ import MateriFlexbox from './pages/FlexBox';
 import PositionReactNative from './pages/Position';
 import SampleComponent from './pages/SanpleComponent';
 import StylingReactNative from './pages/StylingComponent';
-import PropsDinamis from './pages/PropsDinamis'
+import PropsDinamis from './pages/PropsDinamis';
+import StateDinamis from './pages/StateDinamis';
 
 const App = () => {
   const [isShow, SetIsShow] = useState(true);
@@ -24,14 +25,18 @@ const App = () => {
 
         {/* 5.) MAteri Flexbox */}
 
-         {/* <MateriFlexbox /> */}
+        {/* <MateriFlexbox /> */}
 
         {/* 6.) Postion React Native */}
         {/* <PositionReactNative /> */}
 
+        {/* 8.) props Dinamis */}
+        {/* <PropsDinamis/> */}
 
-{/* 8.) props Dinamis */}
-<PropsDinamis/>
+        {/* 9.) State dinamis
+         */}
+        <StateDinamis />
+        
       </ScrollView>
     </>
   );
