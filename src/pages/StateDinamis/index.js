@@ -1,11 +1,12 @@
 import { Button, StyleSheet, Text, View } from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
 
 const Counter = () => {
+    const [number, SetNumber] = useState(0);
   return (
     <View>
-      <Text>0</Text>
-      <Button title="Tambah" />
+      <Text>{number}</Text>
+      <Button title="Tambah" onPress={() => SetNumber(number + 1)} />
     </View>
   );
 };
