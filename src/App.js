@@ -8,9 +8,9 @@ import StylingReactNative from './pages/StylingComponent';
 const App = () => {
   const [isShow, SetIsShow] = useState(true);
   useEffect(() => {
-    setTimeout(() => {
-      SetIsShow(false);
-    }, 6000);
+    // setTimeout(() => {
+    //   SetIsShow(false);
+    // }, 6000);
   }, []);
 
   // 1.) Create New Components(Functional Components)
