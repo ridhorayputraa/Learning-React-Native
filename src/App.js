@@ -1,9 +1,9 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
-import MateriFlexbox from './MateriFlexbox';
-import PositionReactNative from './PositionReactNative';
-import SampleComponent from './SampleComponent';
-import StylingReactNative from './StylingReactNativeComponent';
+import MateriFlexbox from './pages/FlexBox';
+import PositionReactNative from './pages/Position';
+import SampleComponent from './pages/SanpleComponent';
+import StylingReactNative from './pages/StylingComponent';
 
 const App = () => {
   // 1.) Create New Components(Functional Components)
@@ -11,11 +11,11 @@ const App = () => {
     <>
       {/* Scroll view => agar bisa men scroll content */}
       <ScrollView>
-        {/* <SampleComponent/>
-          <StylingReactNative />  */}
+         <SampleComponent/>
+          <StylingReactNative />  
 
-        {/* 5.) MAteri Flexbox
-          <MateriFlexbox/> */}
+         {/* 5.) MAteri Flexbox */}
+          <MateriFlexbox/> 
 
         {/* 6.) Postion React Native */}
         <PositionReactNative />

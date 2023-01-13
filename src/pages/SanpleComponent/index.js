@@ -7,7 +7,13 @@ const SampleComponent = () => {
       {/* View adalah parent apabaila hanya teks makan tidak bisa
   di eksekusi */}
 
-      <View style={{ with: 80, height: 80, backgroundColor: '#93CAED' }} />
+      <View
+        style={{
+          with: 80,
+          height: 80,
+          backgroundColor: '#93CAED',
+        }}
+      />
 
       <Text>Rayyyyy</Text>
       <Text>Rayyyyy</Text>
@@ -58,4 +64,4 @@ class Profile extends Component {
   }
 }
 
-export default SampleComponent
+export default SampleComponent;

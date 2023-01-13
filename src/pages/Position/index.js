@@ -1,8 +1,8 @@
 import { View, Text, Image, StyleSheet } from 'react-native';
 import React from 'react';
-import chart from './chart.png';
+import chart from '../../assets/icons/chart.png';
 
-export default function PositionReactNative() {
+export default function Position() {
   return (
     <View style={styles.wrapper}>
       <Text>5.) Materi Position</Text>

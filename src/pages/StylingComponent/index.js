@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
-import mackbook from './mackbook.jpg';
+import mackbook from '../../assets/image/mackbook.jpg';
 
 // 3.) Styling Component React
 const StylingReactNative = () => {
@@ -69,4 +69,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default StylingReactNative
+export default StylingReactNative;
