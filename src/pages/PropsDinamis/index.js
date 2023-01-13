@@ -1,7 +1,7 @@
 import { Image, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 
-const Story = () => {
+const Story = ({name}) => {
   return (
     <>
       <Text>Materi Component Dinamis dengan Props</Text>
@@ -11,7 +11,7 @@ const Story = () => {
         }}
         style={{ width: 50, height: 50 }}
       />
-      <Text>Bros</Text>
+      <Text>{name}</Text>
     </>
   );
 };
@@ -19,8 +19,8 @@ const Story = () => {
 export default function index() {
   return (
     <View>
-      <Story />
-      <Story />
+      <Story name='Ridhoooo' />
+      <Story name='bross' />
     </View>
   );
 }
