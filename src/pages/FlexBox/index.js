@@ -71,16 +71,27 @@ import { Image, Text, View } from 'react-native';
 // }
 
 const FlexBox = () => {
-
-  const [subscriber, SetSubscriber] = useState(200)
+  const [subscriber, SetSubscriber] = useState(200);
 
   useEffect(() => {
     console.log('==> Did mount');
-  }, [])
+    setTimeout(() => {
+      SetSubscriber(600)
+    }, 6000)
+    return () => {
+      console.log('Did update!')
+    }
+  }, [subscriber]);
 
-  useEffect(() => {
-    console.log('==> Did Update')
-  }, [subscriber])
+  // Bisa hanya memakai 1 useEffect
+
+  // useEffect(() => {
+  //   console.log('==> Did Update');
+  //   setTimeout(() => {
+  //     SetSubscriber(600);
+  //   }, 6000);
+  // }, [subscriber]);
+
   return (
     <View>
       <View
