@@ -22,7 +22,9 @@ const App = () => {
       {/* Scroll view => agar bisa men scroll content */}
       <ScrollView>
         {/* <SampleComponent/>
-          <StylingReactNative />   */}
+        */}
+
+         <StylingReactNative />   
 
         {/* 5.) MAteri Flexbox */}
 
