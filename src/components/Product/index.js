@@ -1,8 +1,14 @@
 import React from "react";
-import { View, StyleSheet, Text, Image } from "react-native";
+import {
+  View,
+  StyleSheet,
+  Text,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 import mackbook from "../../assets/image/mackbook.jpg";
 
-const Product = () => {
+const Product = ({onButtonPress}) => {
   return (
     <View style={styles.wrapper}>
       <Image source={mackbook} style={styles.imageProduct} />
@@ -14,18 +20,14 @@ const Product = () => {
       <Text style={styles.location}>Jakarta Barat</Text>
 
       {/* Button */}
-      <View style={styles.buttonWrapper}>
-        <Text
-          style={styles.buttonText}
-        >
-          BELI
-        </Text>
-      </View>
+      <TouchableOpacity onPress={onButtonPress}>
+        <View style={styles.buttonWrapper}>
+          <Text style={styles.buttonText}>BELI</Text>
+        </View>
+      </TouchableOpacity>
     </View>
   );
 };
-
-
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -50,11 +52,11 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   buttonText: {
-            fontSize: 14,
-            fontWeight: "600",
-            color: "white",
-            textAlign: "center",
-          }
+    fontSize: 14,
+    fontWeight: "600",
+    color: "white",
+    textAlign: "center",
+  },
 });
 
 export default Product;

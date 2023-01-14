@@ -24,7 +24,7 @@ const App = () => {
         {/* <SampleComponent/>
         */}
 
-         <StylingReactNative />   
+         {/* <StylingReactNative />    */}
 
         {/* 5.) MAteri Flexbox */}
 

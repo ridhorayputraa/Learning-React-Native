@@ -2,12 +2,12 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 import React from 'react';
 import chart from '../../assets/icons/chart.png';
 
-export default function Cart() {
+export default function Cart({quantity}) {
   return (
     <View>
       <View style={styles.cartWrapper}>
         <Image source={chart} style={styles.iconCart} />
-        <Text style={styles.notif}>10</Text>
+        <Text style={styles.notif}>{quantity}</Text>
       </View>
       <Text style={styles.text}>Keranjang Belanja Anda</Text>
     </View>
