@@ -6,6 +6,7 @@ import SampleComponent from './pages/SanpleComponent';
 import StylingReactNative from './pages/StylingComponent';
 import PropsDinamis from './pages/PropsDinamis';
 import StateDinamis from './pages/StateDinamis';
+import Communication from './pages/Comunication';
 
 const App = () => {
   const [isShow, SetIsShow] = useState(true);
@@ -35,8 +36,11 @@ const App = () => {
 
         {/* 9.) State dinamis
          */}
-        <StateDinamis />
-        
+        {/* <StateDinamis /> */}
+
+        {/* 10.) Communication state and Props */}
+
+        <Communication />
       </ScrollView>
     </>
   );
