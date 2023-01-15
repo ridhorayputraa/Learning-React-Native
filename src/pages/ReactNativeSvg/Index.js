@@ -6,7 +6,7 @@ export default function ReactNativeSvg() {
   return (
     <View style={styles.container}>
       <Text style={styles.textTitle}>ReactNativeSvg</Text>
-      <ProgrammerImg width={244} height={125}/>
+      <ProgrammerImg width={244} height={244}/>
     </View>
   );
 }
