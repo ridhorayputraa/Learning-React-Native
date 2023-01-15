@@ -58,7 +58,7 @@ export default function BasicJavascript() {
       <Text style={styles.textTitle}>BasicJavascript</Text>
 
       <Text>Name: {name}</Text>
-      <Text>AGge: {age}</Text>
+      <Text>Age: {age}</Text>
       <Text>{sapaHewan(Animal)}</Text>
 
       {/* Looping menggunakan Map */}
