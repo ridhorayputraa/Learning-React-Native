@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { ScrollView } from 'react-native';
-import MateriFlexbox from './pages/FlexBox';
-import PositionReactNative from './pages/Position';
-import SampleComponent from './pages/SanpleComponent';
-import StylingReactNative from './pages/StylingComponent';
-import PropsDinamis from './pages/PropsDinamis';
-import StateDinamis from './pages/StateDinamis';
-import Communication from './pages/Comunication';
+import React, { useEffect, useState } from "react";
+import { ScrollView } from "react-native";
+import MateriFlexbox from "./pages/FlexBox";
+import PositionReactNative from "./pages/Position";
+import SampleComponent from "./pages/SanpleComponent";
+import StylingReactNative from "./pages/StylingComponent";
+import PropsDinamis from "./pages/PropsDinamis";
+import StateDinamis from "./pages/StateDinamis";
+import Communication from "./pages/Comunication";
+import ReactNativeSvg from "./pages/ReactNativeSvg/Index";
 
 const App = () => {
   const [isShow, SetIsShow] = useState(true);
@@ -22,9 +23,9 @@ const App = () => {
       {/* Scroll view => agar bisa men scroll content */}
       <ScrollView>
         {/* <SampleComponent/>
-        */}
+         */}
 
-         {/* <StylingReactNative />    */}
+        {/* <StylingReactNative />    */}
 
         {/* 5.) MAteri Flexbox */}
 
@@ -41,8 +42,12 @@ const App = () => {
         {/* <StateDinamis /> */}
 
         {/* 10.) Communication state and Props */}
+        {/* <Communication />
+         */}
 
-        <Communication />
+        {/* 11.) React Native Svg */}
+        <ReactNativeSvg />
+        
       </ScrollView>
     </>
   );
