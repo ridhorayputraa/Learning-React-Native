@@ -41,14 +41,16 @@ export default function BasicJavascript() {
   // }
 
   const sapaHewan = (ObjectAnimal) => {
-    let hasilSapa = "";
-    //   Logic Dasar
-    if (ObjectAnimal.name === "Naila") {
-      hasilSapa = "Haloo Nailaaa";
-    } else {
-      hasilSapa = "kamu siapaaaa";
-    }
-    return hasilSapa;
+    // let hasilSapa = "";
+    // //   Logic Dasar
+    // if (ObjectAnimal.name === "Naila") {
+    //   hasilSapa = "Haloo Nailaaa";
+    // } else {
+    //   hasilSapa = "kamu siapaaaa";
+    // }
+    // return hasilSapa;
+
+    return ObjectAnimal.name === "Naila" ? "Haloo nailaaaaaa" : "kamuu siapa";
   };
 
   return (
