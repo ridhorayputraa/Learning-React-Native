@@ -60,6 +60,11 @@ export default function BasicJavascript() {
       <Text>Name: {name}</Text>
       <Text>AGge: {age}</Text>
       <Text>{sapaHewan(Animal)}</Text>
+
+      {/* Looping menggunakan Map */}
+        {namaOrang.map((orang) => (
+          <Text>{orang}</Text>
+        ))}
     </View>
   );
 }
