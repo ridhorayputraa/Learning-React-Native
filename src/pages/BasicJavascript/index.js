@@ -41,6 +41,9 @@ export default function BasicJavascript() {
   // }
 
   const sapaHewan = (ObjectAnimal) => {
+
+    // If else biasa
+
     // let hasilSapa = "";
     // //   Logic Dasar
     // if (ObjectAnimal.name === "Naila") {
