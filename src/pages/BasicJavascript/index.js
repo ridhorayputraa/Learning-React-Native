@@ -20,6 +20,10 @@ export default function BasicJavascript() {
       man: "Kaisar",
       woman: "queen",
     },
+    brother: {
+      man: "jajang",
+      woman: "ajeng",
+    },
   }; // Object
 
   const sapaOrang = (name, age) => {
@@ -41,7 +45,6 @@ export default function BasicJavascript() {
   // }
 
   const sapaHewan = (ObjectAnimal) => {
-
     // If else biasa
 
     // let hasilSapa = "";
@@ -65,9 +68,9 @@ export default function BasicJavascript() {
       <Text>{sapaHewan(Animal)}</Text>
 
       {/* Looping menggunakan Map */}
-        {namaOrang.map((orang) => (
-          <Text>{orang}</Text>
-        ))}
+      {namaOrang.map((orang) => (
+        <Text>{orang}</Text>
+      ))}
     </View>
   );
 }
