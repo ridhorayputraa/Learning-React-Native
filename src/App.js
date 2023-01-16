@@ -9,6 +9,7 @@ import StateDinamis from "./pages/StateDinamis";
 import Communication from "./pages/Comunication";
 import ReactNativeSvg from "./pages/ReactNativeSvg/Index";
 import BasicJavascript from "./pages/BasicJavascript";
+import Container from "./pages/container";
 
 const App = () => {
   const [isShow, SetIsShow] = useState(true);
@@ -43,14 +44,18 @@ const App = () => {
         {/* <StateDinamis /> */}
 
         {/* 10.) Communication state and Props */}
-        {/* <Communication />
-         */}
+        <Communication />
+     
 
         {/* 11.) React Native Svg */}
         {/* <ReactNativeSvg /> */}
 
         {/* 12.) Basic JS in ReactNative */}
-        <BasicJavascript />
+        {/* <BasicJavascript /> */}
+
+
+        {/* Learning */}
+       <Container/>
       </ScrollView>
     </>
   );
