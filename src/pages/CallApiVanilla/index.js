@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Button, StyleSheet, Text, View } from "react-native";
 import React, { useEffect } from "react";
 
 const CallApiVanilla = () => {
@@ -15,30 +15,39 @@ const CallApiVanilla = () => {
     };
 
     // Debug
-    console.log('Data Object : ', dataForApi);
-    console.log('Data Tringify ', JSON.stringify(dataForApi))
-    
+    console.log("Data Object : ", dataForApi);
+    console.log("Data Tringify ", JSON.stringify(dataForApi));
+
     fetch("https://reqres.in/api/users", {
-        // Request Method
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(dataForApi)
+      // Request Method
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(dataForApi),
     })
-    .then(response => response.json())
-    .then(json => {
-        console.log('Post Response: ', json)
-    })
+      .then((response) => response.json())
+      .then((json) => {
+        console.log("Post Response: ", json);
+      });
   }, []);
 
   return (
-    <View>
-      <Text>CallApiVanilla</Text>
+    <View style={styles.container}>
+      <Text style={styles.textTitle}>CallApiVanilla</Text>
+      <Button title="GET DATA" />
+      <Text>Response GET DATA</Text>
+      <View style={styles.line} />
+      <Button title="POST DATA" />
+      <Text>Response POST DATA</Text>
     </View>
   );
 };
 
 export default CallApiVanilla;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: { padding: 20 },
+  textTitle: { textAlign: "center" },
+  line: { height: 2, backgroundColor: "black", marginVertical: 20 },
+});
