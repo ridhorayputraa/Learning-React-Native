@@ -10,6 +10,7 @@ import Communication from "./pages/Comunication";
 import ReactNativeSvg from "./pages/ReactNativeSvg/Index";
 import BasicJavascript from "./pages/BasicJavascript";
 import Container from "./pages/container";
+import CallApiVanilla from "./pages/CallApiVanilla";
 
 const App = () => {
   const [isShow, SetIsShow] = useState(true);
@@ -44,8 +45,7 @@ const App = () => {
         {/* <StateDinamis /> */}
 
         {/* 10.) Communication state and Props */}
-        <Communication />
-     
+        {/* <Communication /> */}
 
         {/* 11.) React Native Svg */}
         {/* <ReactNativeSvg /> */}
@@ -53,9 +53,11 @@ const App = () => {
         {/* 12.) Basic JS in ReactNative */}
         {/* <BasicJavascript /> */}
 
-
         {/* Learning */}
-       <Container/>
+        {/* <Container/> */}
+
+        {/* API React Native */}
+        <CallApiVanilla />
       </ScrollView>
     </>
   );
