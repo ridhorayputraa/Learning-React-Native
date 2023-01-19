@@ -10,6 +10,12 @@ const CallApiVanilla = () => {
     last_name: "",
   });
 
+  // State Awal untuk POST
+  const [dataJob, setDataJob] = useState({
+    name: "",
+    job: "",
+  });
+
   useEffect(() => {
     //  fetch('https://jsonplaceholder.typicode.com/todos/1') => Json PlaceHolder
     //     fetch("https://reqres.in/api/users/2")
@@ -46,6 +52,34 @@ const CallApiVanilla = () => {
       });
   };
 
+  // Untuk POST
+  const PostData = () => {
+    //  Call API Method POST
+    const dataForApi = {
+      name: "morpheus",
+      job: "leader",
+    };
+    // Debug
+
+    // console.log("Data Object : ", dataForApi);
+    // console.log("Data Tringify ", JSON.stringify(dataForApi));
+
+    fetch("https://reqres.in/api/users", {
+      // Request Method
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(dataForApi),
+    })
+      .then((response) => response.json())
+      .then((json) => {
+        console.log("Post Response: ", json);
+        // karna di belakang sudah berupa JSON maka langsung saja
+        setDataJob(json)
+      });
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.textTitle}>CallApiVanilla</Text>
@@ -59,8 +93,10 @@ const CallApiVanilla = () => {
       <View style={styles.line} />
 
       {/* Post */}
-      <Button title="POST DATA" />
+      <Button title="POST DATA" onPress={PostData} />
       <Text>Response POST DATA</Text>
+      <Text>{dataJob.name}</Text>
+      <Text>{dataJob.job}</Text>
     </View>
   );
 };
