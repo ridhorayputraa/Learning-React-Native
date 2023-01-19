@@ -16,33 +16,6 @@ const CallApiAxios = () => {
     job: "",
   });
 
-  useEffect(() => {
-    //  fetch('https://jsonplaceholder.typicode.com/todos/1') => Json PlaceHolder
-    //     fetch("https://reqres.in/api/users/2")
-    //       .then((response) => response.json())
-    //       .then((json) => console.log(json));
-        //   Call API Method POST
-        // const dataForApi = {
-        //   name: "morpheus",
-        //   job: "leader",
-        // };
-        // // Debug
-        // console.log("Data Object : ", dataForApi);
-        // console.log("Data Tringify ", JSON.stringify(dataForApi));
-        // fetch("https://reqres.in/api/users", {
-        //   // Request Method
-        //   method: "POST",
-        //   headers: {
-        //     "Content-Type": "application/json",
-        //   },
-        //   body: JSON.stringify(dataForApi),
-        // })
-        //   .then((response) => response.json())
-        //   .then((json) => {
-        //     console.log("Post Response: ", json);
-        //   });
-  }, []);
-
   const getData = () => {
     fetch("https://reqres.in/api/users/2")
       .then((response) => response.json())
@@ -76,7 +49,7 @@ const CallApiAxios = () => {
       .then((json) => {
         console.log("Post Response: ", json);
         // karna di belakang sudah berupa JSON maka langsung saja
-        setDataJob(json)
+        setDataJob(json);
       });
   };
 
@@ -87,7 +60,11 @@ const CallApiAxios = () => {
       <Button title="GET DATA" onPress={getData} />
       <Text>Response GET DATA</Text>
       {/* Munculkan data dari API */}
-      <Image source={{ uri: dataUser.avatar }} style={styles.avatar} />
+
+      {/* JIka string nya kosong jangan munculkan */}
+      {dataUser.avatar.length > 0 && (
+        <Image source={{ uri: dataUser.avatar }} style={styles.avatar} />
+      )}
       <Text>{`${dataUser.first_name} ${dataUser.last_name}`}</Text>
       <Text>{dataUser.email}</Text>
       <View style={styles.line} />
