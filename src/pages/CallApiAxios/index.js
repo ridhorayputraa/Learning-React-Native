@@ -33,26 +33,12 @@ const CallApiAxios = () => {
       name: "morpheus",
       job: "leader",
     };
-    // Debug
-
-    // console.log("Data Object : ", dataForApi);
-    // console.log("Data Tringify ", JSON.stringify(dataForApi));
-
-    // fetch("https://reqres.in/api/users", {
-    //   // Request Method
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(dataForApi),
-    // })
-    //   .then((response) => response.json())
-    //   .then((json) => {
-    //     console.log("Post Response: ", json);
-    //     // karna di belakang sudah berupa JSON maka langsung saja
-    //     setDataJob(json);
-    //   });
-
+   
+    axios.post("https://reqres.in/api/users", dataForApi)
+    .then(result => {
+      setDataJob(result.data)
+    })
+    .catch(err => console.log("err: ", err))
   };
 
   return (
