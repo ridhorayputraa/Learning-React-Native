@@ -1,7 +1,7 @@
 import { Button, Image, StyleSheet, Text, View } from "react-native";
 import React, { useEffect, useState } from "react";
 
-const CallApiVanilla = () => {
+const CallApiAxios = () => {
   // Buat data awal dengan STATE
   const [dataUser, setDataUser] = useState({
     avatar: "",
@@ -82,7 +82,7 @@ const CallApiVanilla = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.textTitle}>CallApiVanilla</Text>
+      <Text style={styles.textTitle}>CallApiAxios</Text>
       {/* GET */}
       <Button title="GET DATA" onPress={getData} />
       <Text>Response GET DATA</Text>
@@ -101,7 +101,7 @@ const CallApiVanilla = () => {
   );
 };
 
-export default CallApiVanilla;
+export default CallApiAxios;
 
 const styles = StyleSheet.create({
   container: { padding: 20 },

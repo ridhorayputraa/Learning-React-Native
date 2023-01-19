@@ -11,6 +11,7 @@ import ReactNativeSvg from "./pages/ReactNativeSvg/Index";
 import BasicJavascript from "./pages/BasicJavascript";
 import Container from "./pages/container";
 import CallApiVanilla from "./pages/CallApiVanilla";
+import CallApiAxios from "./pages/CallApiAxios";
 
 const App = () => {
   const [isShow, SetIsShow] = useState(true);
@@ -57,7 +58,9 @@ const App = () => {
         {/* <Container/> */}
 
         {/* API React Native */}
-        <CallApiVanilla />
+        {/* <CallApiVanilla /> */}
+
+        <CallApiAxios />
       </ScrollView>
     </>
   );
