@@ -4,17 +4,13 @@ import axios, { Axios } from "axios";
 
 const CallApiAxios = () => {
   // Buat data awal dengan STATE
+  
+  
   const [dataUser, setDataUser] = useState({
     avatar: "",
     email: "",
     first_name: "",
     last_name: "",
-  });
-
-  // State Awal untuk POST
-  const [dataJob, setDataJob] = useState({
-    name: "",
-    job: "",
   });
 
   const getData = () => {
@@ -25,7 +21,12 @@ const CallApiAxios = () => {
       })
       .catch((err) => console.log("err: ", err));
   };
-
+  
+  // State Awal untuk POST
+  const [dataJob, setDataJob] = useState({
+    name: "",
+    job: "",
+  });
   // Untuk POST
   const PostData = () => {
     //  Call API Method POST
