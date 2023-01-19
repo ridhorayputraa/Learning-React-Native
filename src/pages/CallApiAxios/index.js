@@ -1,5 +1,6 @@
 import { Button, Image, StyleSheet, Text, View } from "react-native";
 import React, { useEffect, useState } from "react";
+import axios, { Axios } from "axios";
 
 const CallApiAxios = () => {
   // Buat data awal dengan STATE
@@ -17,12 +18,12 @@ const CallApiAxios = () => {
   });
 
   const getData = () => {
-    fetch("https://reqres.in/api/users/2")
-      .then((response) => response.json())
-      .then((json) => {
-        console.log(json);
-        setDataUser(json.data);
-      });
+    axios
+      .get("https://reqres.in/api/users/3")
+      .then((result) => {
+        setDataUser(result.data.data);
+      })
+      .catch((err) => console.log("err: ", err));
   };
 
   // Untuk POST
@@ -37,20 +38,21 @@ const CallApiAxios = () => {
     // console.log("Data Object : ", dataForApi);
     // console.log("Data Tringify ", JSON.stringify(dataForApi));
 
-    fetch("https://reqres.in/api/users", {
-      // Request Method
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(dataForApi),
-    })
-      .then((response) => response.json())
-      .then((json) => {
-        console.log("Post Response: ", json);
-        // karna di belakang sudah berupa JSON maka langsung saja
-        setDataJob(json);
-      });
+    // fetch("https://reqres.in/api/users", {
+    //   // Request Method
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(dataForApi),
+    // })
+    //   .then((response) => response.json())
+    //   .then((json) => {
+    //     console.log("Post Response: ", json);
+    //     // karna di belakang sudah berupa JSON maka langsung saja
+    //     setDataJob(json);
+    //   });
+
   };
 
   return (
