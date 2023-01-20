@@ -12,6 +12,7 @@ import BasicJavascript from "./pages/BasicJavascript";
 import Container from "./pages/container";
 import CallApiVanilla from "./pages/CallApiVanilla";
 import CallApiAxios from "./pages/CallApiAxios";
+import LocalAPI from "./pages/LocalAPI";
 
 const App = () => {
   const [isShow, SetIsShow] = useState(true);
@@ -60,7 +61,8 @@ const App = () => {
         {/* API React Native */}
         {/* <CallApiVanilla /> */}
 
-        <CallApiAxios />
+        {/* <CallApiAxios /> */}
+        <LocalAPI/>
       </ScrollView>
     </>
   );
