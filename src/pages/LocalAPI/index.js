@@ -2,6 +2,24 @@ import { Button, Image, StyleSheet, Text, TextInput, View } from "react-native";
 import React from "react";
 import { SvgUri } from "react-native-svg";
 
+const Item = () => {
+  return (
+    <View style={styles.itemContainer}>
+      <SvgUri
+        style={styles.avatar}
+        uri="https://api.multiavatar.com/kathrin.svg"
+      />
+
+      <View style={styles.desc}>
+        <Text style={styles.descName}>Nama Lengkap</Text>
+        <Text style={styles.descEmail}>Email</Text>
+        <Text style={styles.descBidang}>Bidang</Text>
+      </View>
+      <Text style={styles.delete}>X</Text>
+    </View>
+  );
+};
+
 export default function LocalAPI() {
   return (
     <View style={styles.container}>
@@ -12,19 +30,9 @@ export default function LocalAPI() {
       <TextInput style={styles.input} placeholder="Bidang" />
       <Button title="Simpan" />
       <View style={styles.line} />
-      <View>
-        <SvgUri
-          width="100"
-          height="100"
-          uri="https://api.multiavatar.com/kathrin.svg"
-        />
-
-        <View>
-          <Text>Nama Lengkap</Text>
-          <Text>Email</Text>
-          <Text>Bidang</Text>
-        </View>
-      </View>
+      <Item />
+      <Item />
+      <Item />
     </View>
   );
 }
@@ -40,8 +48,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 18,
   },
   avatar: {
-    width: 100,
-    height: 100,
-    borderRadius: 100,
+    width: 80,
+    height: 80,
+    borderRadius: 80,
   },
+  itemContainer: { flexDirection: "row", marginBottom: 20 },
+  desc: { marginLeft: 18, flex: 1 },
+  descName: { fontSize: 20, fontWeight: "bold" },
+  descEmail: { fontSize: 16 },
+  descBidang: { fontSize: 12, marginTop: 8 },
+  delete: { fontSize: 20, fontWeight: "bold", color: "red" },
 });
