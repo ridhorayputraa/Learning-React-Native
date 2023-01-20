@@ -1,36 +1,10 @@
 {
-  "posts": [
+  "users": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    },
- 
-    {
-      "title": "MAMANG CODING",
-      "author": "RAY",
-      "id": 2
-    },
-    {
-      "title": "MAMANG CODING VOL1",
-      "author": "RAY",
-      "id": 3
-    },
-    {
-      "title": "MAMANG CODING VOL2",
-      "author": "RAY",
-      "id": 4
+      "name": "Ridho",
+      "email": "Ridho@Gmail.com",
+      "bidang": "RN Dev"
     }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  },
-  
+  ]
 }
