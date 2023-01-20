@@ -1,5 +1,5 @@
 import { Button, Image, StyleSheet, Text, TextInput, View } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { SvgUri } from "react-native-svg";
 
 const Item = () => {
@@ -21,14 +21,44 @@ const Item = () => {
 };
 
 export default function LocalAPI() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [bidang, setBidang] = useState("");
+
+  const submit = () => {
+    const data = {
+        name,
+        email,
+        bidang,
+        // apabila key dan value nya sama
+        // maka boleh hanya begitu saja
+    }
+    console.log("Data before send: ", data)
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.textTitle}>Local API (JSON Server)</Text>
       <Text>Masukan Anggota Katanya Coding</Text>
-      <TextInput style={styles.input} placeholder="Nama Lengkap" />
-      <TextInput style={styles.input} placeholder="Email" />
-      <TextInput style={styles.input} placeholder="Bidang" />
-      <Button title="Simpan" />
+      <TextInput
+        style={styles.input}
+        value={name}
+        onChangeText={(value) => setName(value)}
+        placeholder="Nama Lengkap"
+      />
+      <TextInput
+        style={styles.input}
+        value={email}
+        onChangeText={(value) => setEmail(value)}
+        placeholder="Email"
+      />
+      <TextInput
+        style={styles.input}
+        value={bidang}
+        onChangeText={(value) => setBidang(value)}
+        placeholder="Bidang"
+      />
+      <Button title="Simpan" onPress={submit} />
       <View style={styles.line} />
       <Item />
       <Item />
