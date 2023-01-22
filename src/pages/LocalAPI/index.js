@@ -57,6 +57,7 @@ export default function LocalAPI() {
     })
   };
 // json-server --host 10.0.2.2 --watch db.json
+// samakan localhost ip localjson server dan ip perangkat emu/laptop
 
   return (
     <View style={styles.container}>
