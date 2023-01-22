@@ -1,34 +1,43 @@
-import { Button, StyleSheet, Text, TextInput, View } from "react-native";
-import React, { useState } from "react";
+import { Button, Image, StyleSheet, Text, TextInput, View } from "react-native";
+import React, { useEffect, useState } from "react";
 import { SvgUri } from "react-native-svg";
 import axios from "axios";
 
-const Item = () => {
+const Item = ({ name, email, bidang }) => {
   return (
     <View style={styles.itemContainer}>
       <SvgUri
         style={styles.avatar}
-        uri="https://api.multiavatar.com/kathrin.svg"
+        uri={`https://api.multiavatar.com/{${email}}.svg`}
+        
+        
       />
+{/* <Image 
+ style={styles.avatar}
+source= {<SvgUri uri={`https://api.multiavatar.com/${email}.svg`}/>}
+ /> */}
 
       <View style={styles.desc}>
-        <Text style={styles.descName}>Nama Lengkap</Text>
-        <Text style={styles.descEmail}>Email</Text>
-        <Text style={styles.descBidang}>Bidang</Text>
+        <Text style={styles.descName}>{name}</Text>
+        <Text style={styles.descEmail}>{email}</Text>
+        <Text style={styles.descBidang}>{bidang}</Text>
       </View>
       <Text style={styles.delete}>X</Text>
     </View>
   );
 };
 
-export default function LocalAPI() {
+function LocalAPI() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [bidang, setBidang] = useState("");
+  const [users, setUsers] = useState([]);
 
-  // const IP_ADDRESS = '10.0.2.2'; 
-  
-  const submit =  () => {
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const submit = () => {
     const data = {
       name,
       email,
@@ -47,17 +56,29 @@ export default function LocalAPI() {
 
     // apabila key dan value nya sama
     // maka boleh hanya begitu saja
-    console.log("Data before send: ", data);
-    axios.post('http://192.168.0.2:3000/users', data)
-    .then(res => {
-      console.log("res: ", res);
-    })
-    .catch(err => {
-      console.log('errr: ', err)
+
+    axios.post("http://192.168.0.2:3000/users", data)
+      .then((res) => {
+        console.log("res: ", res);
+        setName("");
+        setEmail("");
+        setBidang("");
+      })
+      .catch((err) => {
+        console.log("errr: ", err);
+      });
+  };
+  // json-server --host 10.0.2.2 --watch db.json
+  // samakan localhost ip localjson server dan ip perangkat
+
+  // Method GET
+
+  const getData = () => {
+    axios.get("http://192.168.0.2:3000/users").then((res) => {
+      console.log("res get data: ", res);
+      setUsers(res.data)
     })
   };
-// json-server --host 10.0.2.2 --watch db.json
-// samakan localhost ip localjson server dan ip perangkat emu/laptop
 
   return (
     <View style={styles.container}>
@@ -83,9 +104,9 @@ export default function LocalAPI() {
       />
       <Button title="Simpan" onPress={submit} />
       <View style={styles.line} />
-      <Item />
-      <Item />
-      <Item />
+      {users.map(user => {
+        return <Item key={user.id} name={user.name}  email={user.email} bidang={user.bidang} />
+      })}
     </View>
   );
 }
@@ -112,3 +133,5 @@ const styles = StyleSheet.create({
   descBidang: { fontSize: 12, marginTop: 8 },
   delete: { fontSize: 20, fontWeight: "bold", color: "red" },
 });
+
+export default LocalAPI;

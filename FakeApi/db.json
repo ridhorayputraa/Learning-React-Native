@@ -1,28 +1,22 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Ridho",
-      "email": "Ridho@Gmail.com",
-      "bidang": "RN Dev"
+      "name": "Ridho ke 2",
+      "email": "Ridho@gmaill.com",
+      "bidang": "Programmer",
+      "id": 6
     },
     {
-      "name": "aaaaaa",
-      "email": "a",
-      "bidang": "aaaa",
-      "id": 2
+      "name": "aaa",
+      "email": "aa",
+      "bidang": "aa",
+      "id": 10
     },
     {
-      "name": "aaaaaa",
-      "email": "a",
-      "bidang": "aaaa",
-      "id": 3
-    },
-    {
-      "name": "aaaaaa",
-      "email": "a",
-      "bidang": "aaaa",
-      "id": 4
+      "name": "ridskuyy",
+      "email": "sekutaja@gmail.com",
+      "bidang": "UI/UX",
+      "id": 11
     }
   ]
 }
