@@ -8,6 +8,7 @@ const Item = ({ name, email, bidang }) => {
     <View style={styles.itemContainer}>
       <SvgUri
         style={styles.avatar}
+        // akal akalan dynamic url uri
         uri={`https://api.multiavatar.com/{${email}}.svg`}
         
         
