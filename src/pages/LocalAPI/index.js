@@ -1,6 +1,7 @@
-import { Button, Image, StyleSheet, Text, TextInput, View } from "react-native";
+import { Button, StyleSheet, Text, TextInput, View } from "react-native";
 import React, { useState } from "react";
 import { SvgUri } from "react-native-svg";
+import axios from "axios";
 
 const Item = () => {
   return (
@@ -25,16 +26,37 @@ export default function LocalAPI() {
   const [email, setEmail] = useState("");
   const [bidang, setBidang] = useState("");
 
-  const submit = () => {
+  // const IP_ADDRESS = '10.0.2.2'; 
+  
+  const submit =  () => {
     const data = {
-        name,
-        email,
-        bidang,
-        // apabila key dan value nya sama
-        // maka boleh hanya begitu saja
-    }
-    console.log("Data before send: ", data)
-  }
+      name,
+      email,
+      bidang,
+    };
+    // try {
+    //   console.log('data berfore send', data)
+    //   const response = await axios.post(
+    //     `http://${IP_ADDRESS}:3000/users`,
+    //     data
+    //   );
+    //   return response.data;
+    // } catch (error) {
+    //   console.error(error);
+    // }
+
+    // apabila key dan value nya sama
+    // maka boleh hanya begitu saja
+    console.log("Data before send: ", data);
+    axios.post('http://192.168.0.2:3000/users', data)
+    .then(res => {
+      console.log("res: ", res);
+    })
+    .catch(err => {
+      console.log('errr: ', err)
+    })
+  };
+// json-server --host 10.0.2.2 --watch db.json
 
   return (
     <View style={styles.container}>
