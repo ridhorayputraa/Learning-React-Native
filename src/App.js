@@ -63,6 +63,7 @@ const App = () => {
 
         {/* <CallApiAxios /> */}
         <LocalAPI/>
+        {/* Last update */}
       </ScrollView>
     </>
   );

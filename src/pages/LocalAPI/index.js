@@ -64,6 +64,7 @@ function LocalAPI() {
         setName("");
         setEmail("");
         setBidang("");
+        getData();
       })
       .catch((err) => {
         console.log("errr: ", err);
