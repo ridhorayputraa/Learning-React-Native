@@ -45,20 +45,28 @@ function LocalAPI() {
       email,
       bidang,
     };
-  
     // apabila key dan value nya sama
     // maka boleh hanya begitu saja
-    axios.post("http://192.168.0.2:3000/users", data)
-      .then((res) => {
-        console.log("res: ", res);
-        setName("");
-        setEmail("");
-        setBidang("");
-        getData();
-      })
-      .catch((err) => {
-        console.log("errr: ", err);
-      });
+
+
+    // Logic jika buutton di state "Simpan"
+    if(button === 'Simpan'){
+      axios.post("http://192.168.0.2:3000/users", data)
+        .then((res) => {
+          console.log("res: ", res);
+          setName("");
+          setEmail("");
+          setBidang("");
+          getData();
+        })
+        .catch((err) => {
+          console.log("errr: ", err);
+        });
+    }else if(button === 'Update'){
+      //  Pur/Patch tergantung dari backend menyediakannya
+      axios.put('http://192.168.0.2:3000/users', data)
+    }
+
   };
   // json-server --host 10.0.2.2 --watch db.json
   // samakan localhost ip localjson server dan ip perangkat
