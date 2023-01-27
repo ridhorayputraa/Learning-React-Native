@@ -34,6 +34,7 @@ function LocalAPI() {
   const [bidang, setBidang] = useState("");
   const [users, setUsers] = useState([]);
   const [button, setButton] = useState('Simpan');
+  const [selectedUser, setSelectedUser] = useState({});
 
   useEffect(() => {
     getData();
@@ -64,7 +65,11 @@ function LocalAPI() {
         });
     }else if(button === 'Update'){
       //  Pur/Patch tergantung dari backend menyediakannya
-      axios.put('http://192.168.0.2:3000/users', data)
+      axios.put(`http://192.168.0.2:3000/users/${selectedUser.id}`, data)
+      .then(res =>{
+        console.log('Sukses Edit: ', res);
+        getData();
+      })
     }
 
   };
@@ -84,6 +89,7 @@ function LocalAPI() {
   // Update method PUT
   const selectItem = (item) => {
      console.log('Select Item: ', item)
+     setSelectedUser(item)
      setName(item.name);
      setEmail(item.email);
      setBidang(item.bidang);
