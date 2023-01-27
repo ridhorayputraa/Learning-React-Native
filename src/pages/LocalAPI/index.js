@@ -1,4 +1,5 @@
 import {
+  Alert,
   Button,
   Image,
   StyleSheet,
@@ -112,6 +113,10 @@ function LocalAPI() {
   // Delete
   const deleteItem = (item) => {
     console.log("delete: ", item);
+    axios.delete(`http://192.168.0.2:3000/users/${item.id}`).then((res) => {
+      console.log("kelar ngapus", res);
+      getData();
+    });
   };
 
   return (
@@ -146,7 +151,14 @@ function LocalAPI() {
             onPress={() => selectItem(user)}
             email={user.email}
             bidang={user.bidang}
-            onDelete={() => deleteItem(user)}
+            onDelete={() =>
+              Alert.alert("Peringatan", 
+              "Anda yakin akan menghapus user ini",
+               [
+                { text: "Tidak", onPress: () => console.log("button Tidak") },
+                { text: "Ya", onPress: () => deleteItem(user) },
+              ])
+            }
           />
         );
       })}
