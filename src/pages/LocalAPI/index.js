@@ -1,18 +1,18 @@
-import { Button, Image, StyleSheet, Text, TextInput, View } from "react-native";
+import { Button, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import React, { useEffect, useState } from "react";
 import { SvgUri } from "react-native-svg";
 import axios from "axios";
 
-const Item = ({ name, email, bidang }) => {
+const Item = ({ name, email, bidang, onPress }) => {
   return (
     <View style={styles.itemContainer}>
+    <TouchableOpacity onPress={onPress}>
       <SvgUri
         style={styles.avatar}
         // akal akalan dynamic url uri
-        uri={`https://api.multiavatar.com/{${email}}.svg`}
-        
-        
+        uri={`https://api.multiavatar.com/{${email}}.svg`}  
       />
+    </TouchableOpacity>
 {/* <Image 
  style={styles.avatar}
 source= {<SvgUri uri={`https://api.multiavatar.com/${email}.svg`}/>}
@@ -33,6 +33,7 @@ function LocalAPI() {
   const [email, setEmail] = useState("");
   const [bidang, setBidang] = useState("");
   const [users, setUsers] = useState([]);
+  const [button, setButton] = useState('Simpan');
 
   useEffect(() => {
     getData();
@@ -44,20 +45,9 @@ function LocalAPI() {
       email,
       bidang,
     };
-    // try {
-    //   console.log('data berfore send', data)
-    //   const response = await axios.post(
-    //     `http://${IP_ADDRESS}:3000/users`,
-    //     data
-    //   );
-    //   return response.data;
-    // } catch (error) {
-    //   console.error(error);
-    // }
-
+  
     // apabila key dan value nya sama
     // maka boleh hanya begitu saja
-
     axios.post("http://192.168.0.2:3000/users", data)
       .then((res) => {
         console.log("res: ", res);
@@ -82,6 +72,16 @@ function LocalAPI() {
     })
   };
 
+
+  // Update method PUT
+  const selectItem = (item) => {
+     console.log('Select Item: ', item)
+     setName(item.name);
+     setEmail(item.email);
+     setBidang(item.bidang);
+     setButton('Update')
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.textTitle}>Local API (JSON Server)</Text>
@@ -104,10 +104,10 @@ function LocalAPI() {
         onChangeText={(value) => setBidang(value)}
         placeholder="Bidang"
       />
-      <Button title="Simpan" onPress={submit} />
+      <Button title={button} onPress={submit} />
       <View style={styles.line} />
       {users.map(user => {
-        return <Item key={user.id} name={user.name}  email={user.email} bidang={user.bidang} />
+        return <Item key={user.id} name={user.name} onPress={() => selectItem(user)}  email={user.email} bidang={user.bidang} />
       })}
     </View>
   );
