@@ -11,7 +11,7 @@ import React, { useEffect, useState } from "react";
 import { SvgUri } from "react-native-svg";
 import axios from "axios";
 
-const Item = ({ name, email, bidang, onPress }) => {
+const Item = ({ name, email, bidang, onPress, onDelete }) => {
   return (
     <View style={styles.itemContainer}>
       <TouchableOpacity onPress={onPress}>
@@ -31,7 +31,7 @@ source= {<SvgUri uri={`https://api.multiavatar.com/${email}.svg`}/>}
         <Text style={styles.descEmail}>{email}</Text>
         <Text style={styles.descBidang}>{bidang}</Text>
       </View>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={onDelete}>
         <Text style={styles.delete}>X</Text>
       </TouchableOpacity>
     </View>
@@ -109,6 +109,11 @@ function LocalAPI() {
     setButton("Update");
   };
 
+  // Delete
+  const deleteItem = (item) => {
+    console.log("delete: ", item);
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.textTitle}>Local API (JSON Server)</Text>
@@ -141,6 +146,7 @@ function LocalAPI() {
             onPress={() => selectItem(user)}
             email={user.email}
             bidang={user.bidang}
+            onDelete={() => deleteItem(user)}
           />
         );
       })}
