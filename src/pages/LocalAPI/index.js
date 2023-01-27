@@ -1,4 +1,12 @@
-import { Button, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import {
+  Button,
+  Image,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import React, { useEffect, useState } from "react";
 import { SvgUri } from "react-native-svg";
 import axios from "axios";
@@ -6,14 +14,14 @@ import axios from "axios";
 const Item = ({ name, email, bidang, onPress }) => {
   return (
     <View style={styles.itemContainer}>
-    <TouchableOpacity onPress={onPress}>
-      <SvgUri
-        style={styles.avatar}
-        // akal akalan dynamic url uri
-        uri={`https://api.multiavatar.com/{${email}}.svg`}  
-      />
-    </TouchableOpacity>
-{/* <Image 
+      <TouchableOpacity onPress={onPress}>
+        <SvgUri
+          style={styles.avatar}
+          // akal akalan dynamic url uri
+          uri={`https://api.multiavatar.com/{${email}}.svg`}
+        />
+      </TouchableOpacity>
+      {/* <Image 
  style={styles.avatar}
 source= {<SvgUri uri={`https://api.multiavatar.com/${email}.svg`}/>}
  /> */}
@@ -23,7 +31,9 @@ source= {<SvgUri uri={`https://api.multiavatar.com/${email}.svg`}/>}
         <Text style={styles.descEmail}>{email}</Text>
         <Text style={styles.descBidang}>{bidang}</Text>
       </View>
-      <Text style={styles.delete}>X</Text>
+      <TouchableOpacity>
+        <Text style={styles.delete}>X</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -33,7 +43,7 @@ function LocalAPI() {
   const [email, setEmail] = useState("");
   const [bidang, setBidang] = useState("");
   const [users, setUsers] = useState([]);
-  const [button, setButton] = useState('Simpan');
+  const [button, setButton] = useState("Simpan");
   const [selectedUser, setSelectedUser] = useState({});
 
   useEffect(() => {
@@ -49,10 +59,10 @@ function LocalAPI() {
     // apabila key dan value nya sama
     // maka boleh hanya begitu saja
 
-
     // Logic jika buutton di state "Simpan"
-    if(button === 'Simpan'){
-      axios.post("http://192.168.0.2:3000/users", data)
+    if (button === "Simpan") {
+      axios
+        .post("http://192.168.0.2:3000/users", data)
         .then((res) => {
           console.log("res: ", res);
           setName("");
@@ -63,15 +73,19 @@ function LocalAPI() {
         .catch((err) => {
           console.log("errr: ", err);
         });
-    }else if(button === 'Update'){
+    } else if (button === "Update") {
       //  Pur/Patch tergantung dari backend menyediakannya
-      axios.put(`http://192.168.0.2:3000/users/${selectedUser.id}`, data)
-      .then(res =>{
-        console.log('Sukses Edit: ', res);
-        getData();
-      })
+      axios
+        .put(`http://192.168.0.2:3000/users/${selectedUser.id}`, data)
+        .then((res) => {
+          console.log("Sukses Edit: ", res);
+          getData();
+          setName("");
+          setEmail("");
+          setBidang("");
+          setButton("Simpan");
+        });
     }
-
   };
   // json-server --host 10.0.2.2 --watch db.json
   // samakan localhost ip localjson server dan ip perangkat
@@ -81,20 +95,19 @@ function LocalAPI() {
   const getData = () => {
     axios.get("http://192.168.0.2:3000/users").then((res) => {
       console.log("res get data: ", res);
-      setUsers(res.data)
-    })
+      setUsers(res.data);
+    });
   };
-
 
   // Update method PUT
   const selectItem = (item) => {
-     console.log('Select Item: ', item)
-     setSelectedUser(item)
-     setName(item.name);
-     setEmail(item.email);
-     setBidang(item.bidang);
-     setButton('Update')
-  }
+    console.log("Select Item: ", item);
+    setSelectedUser(item);
+    setName(item.name);
+    setEmail(item.email);
+    setBidang(item.bidang);
+    setButton("Update");
+  };
 
   return (
     <View style={styles.container}>
@@ -120,8 +133,16 @@ function LocalAPI() {
       />
       <Button title={button} onPress={submit} />
       <View style={styles.line} />
-      {users.map(user => {
-        return <Item key={user.id} name={user.name} onPress={() => selectItem(user)}  email={user.email} bidang={user.bidang} />
+      {users.map((user) => {
+        return (
+          <Item
+            key={user.id}
+            name={user.name}
+            onPress={() => selectItem(user)}
+            email={user.email}
+            bidang={user.bidang}
+          />
+        );
       })}
     </View>
   );
